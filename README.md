@@ -1,3 +1,5 @@
+<img src="images/banner-1544x500.jpg" alt="Genesis Infite Scroll" />
+
 Easily add infinite scroll to your Genesis child themes. You have a couple of options to load more posts on a button click (without page reload) or automatically when the user scrolls to the end of the last post.
 
 10 different loading animations gives you plenty of options to choose from. You can literally set any color to the loading icons that suit your brand color.
@@ -56,9 +58,15 @@ For example, check the home page of the [Geek Dashboard](https://www.geekdashboa
 #### Loading posts "Automatically on scroll" or "On Button Click". Which one to use and why?
 Both options have their own pros and cons. If you have important information in site footer or sidebar(on mobiles), you should use "On Button Click" to load more posts. So the user will have a chance to view your sidebar and footer. If you wish to save a user click and no critical information is available in the sidebar or the footer, you can choose to load posts automatically when the user scrolls to the end of the list.
 
+# Screenshots
+<img src="images/screenshot-1.png" alt="All Plugin Settings"/>
+<img src="images/screenshot-2.png" alt="Animation Styles"/>
+<img src="images/screenshot-3.gif" alt="Loading Animatins"/>
+<img src="images/screenshot-4.png" alt="Infinite Colors"/>
+
 
 # Changelog
 
 #### v1.0
-* Release Date - 18 July 2020*
+* Release Date - 18 July 2020
 * Initial release.
