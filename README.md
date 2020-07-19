@@ -7,7 +7,7 @@ Easily add infinite scroll to your Genesis child themes. You have a couple of op
 [View Demo on Geek Dashboard](https://www.geekdashboard.com/category/news/)
 
 
-Features of Genesis Infinite Scroll:
+# Features of Genesis Infinite Scroll:
 
 * Lightweight implementation.
 * Flexible options to enable/disable infinite scroll on the home page, blog, tags, categories, author archives, and search results.
