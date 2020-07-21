@@ -1,4 +1,4 @@
-<img src="images/banner-1544x500.jpg" alt="Infite Scroll for Genesis" />
+<img src="images/banner-1544x500.jpg" alt="Genesis Infite Scroll" />
 
 Easily add infinite scroll to your Genesis child themes. You have a couple of options to load more posts on a button click (without page reload) or automatically when the user scrolls to the end of the last post.
 
@@ -7,7 +7,7 @@ Easily add infinite scroll to your Genesis child themes. You have a couple of op
 [View Demo on Geek Dashboard](https://www.geekdashboard.com/category/news/)
 
 
-# Features of Infinite Scroll for Genesis:
+# Features of Genesis Infinite Scroll:
 
 * Lightweight implementation.
 * Flexible options to enable/disable infinite scroll on the home page, blog, tags, categories, author archives, and search results.
@@ -27,21 +27,21 @@ If you have any questions about our service or plugin, don't hesitate to contact
 The quickest method for installing the WP Droid is:
 
 1. Visit Plugins -> Add New in the WordPress dashboard.
-1. Search for `Infinite Scroll for Genesis` without quotes in the search box.
+1. Search for `Genesis Infinite Scroll` without quotes in the search box.
 1. Click "Install".
 1. Finally, click `Activate Plugin`.
 
 If you would prefer to do things manually then follow these instructions:
 
 1. Extract the downloaded plugin file.
-1. Upload the `infinite-scroll-for-genesis` folder to the `/wp-content/plugins/` directory
+1. Upload the `genesis-Infinite-scroll` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 
 # Frequently Asked Questions
 
 #### How does this plugin works
-This plugin uses Genesis default hooks and infinite-scroll JavaScript library to enable infinite scroll on selected pages.
+This plugin uses genesis default hooks and infinite-scroll JavaScript library to enable infinite scroll on selected pages.
 
 #### Will it slows down my site
 No, the JavaScript file in hosted locally, and no additional HTTP request to the enteral site is made. We have also taken the utmost care to inline the CSS and JS only when required.

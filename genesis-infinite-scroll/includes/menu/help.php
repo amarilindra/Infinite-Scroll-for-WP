@@ -1,6 +1,6 @@
 <?php
 
-function ikva_infinite_scroll_for_wp_help()
+function ikva_genesis_infinite_scroll_help()
 {
 
     $animationHelper = new AnimationHelper();
@@ -8,12 +8,12 @@ function ikva_infinite_scroll_for_wp_help()
     ?>
 
     <div class="ikva-infinite-scroll-tab help"></div>
-    <div class="ikva_infinite_scroll_for_wp_help">
+    <div class="ikva_genesis_infinite_scroll_help">
         <h3>Is my theme supported?</h3>
-        <p><?php echo ikva_infinite_scroll_for_wp_is_genesis_framework(); ?></p>
+        <p><?php echo ikva_infinite_scroll_is_genesis_framework(); ?></p>
     </div>
 
-    <div class="ikva_infinite_scroll_for_wp_help">
+    <div class="ikva_genesis_infinite_scroll_help">
         <h3>Should I enable infinite scroll everywhere?</h3>
         <p>Maybe Yes or No. It depends on your preferences and theme design.<br>If you are using a custom-developed page
             instead of regular posts layout as your front page/home page, you need to disable infinite scroll on
@@ -23,7 +23,7 @@ function ikva_infinite_scroll_for_wp_help()
             page, you can enable infinite scroll on it.</p>
     </div>
 
-    <div class="ikva_infinite_scroll_for_wp_help">
+    <div class="ikva_genesis_infinite_scroll_help">
         <h3>Loading posts "Automatically on scroll" or "On Button Click". Which one to use and why?</h3>
         <p>Both options have it's own pros and cons. If you have important information in site footer or sidebar(on
             mobiles), you should use "On Button Click" to load more posts. So the user will have a chance to view your
@@ -32,7 +32,7 @@ function ikva_infinite_scroll_for_wp_help()
             the footer, you can choose to load posts automatically when user scrolls to the end of the list.</p>
     </div>
 
-    <div class="ikva_infinite_scroll_for_wp_help">
+    <div class="ikva_genesis_infinite_scroll_help">
         <h3>What is plugin priority?</h3>
         <p>Under the hood, the plugin use <code>genesis_before_loop</code> and <code>genesis_after_loop</code> actions
             to show the loading button and animations. If any other installed plugin or your theme is using the same
@@ -42,9 +42,9 @@ function ikva_infinite_scroll_for_wp_help()
     </div>
 
 
-    <div class="ikva_infinite_scroll_for_wp_help">
+    <div class="ikva_genesis_infinite_scroll_help">
         <h3>All animations styles in action</h3>
-        <div class="ikva_infinite_scroll_for_wp_all_animations">
+        <div class="ikva_genesis_infinite_scroll_all_animations">
             <ul>
                 <?php
                 ikva_infinite_scroll_animation_preview_help($animationHelper->solidSquareAnimation());
@@ -62,7 +62,7 @@ function ikva_infinite_scroll_for_wp_help()
         </div>
     </div>
 
-    <div class="ikva_infinite_scroll_for_wp_help">
+    <div class="ikva_genesis_infinite_scroll_help">
         <h3>I have a feature suggestion / I want to report a bug</h3>
         <p>To report bugs or to suggest new features, please visit the <a
                     href="https://ikvaesolutions.com/go/genesis-infinite-scroll-github" target="_blank">GitHub repo</a>
@@ -70,7 +70,7 @@ function ikva_infinite_scroll_for_wp_help()
                 page</a>. Alternatively, you can get in touch with us at <a href="mailto:contact@ikvaesolutions.com">contact@ikvaesolutions.com</a>
             or <a href="mailto:contact@geekdashboard.com">contact@geekdashboard.com</a></p>
     </div>
-    <div class="ikva_infinite_scroll_for_wp_help">
+    <div class="ikva_genesis_infinite_scroll_help">
         <h3>How does this plugin work?</h3>
         <p>This plugin is using <a href="https://unpkg.com/infinite-scroll@3.0.6/dist/infinite-scroll.pkgd.min.js"
                                    target="_blank">infinite-scroll.pkgd.min.js</a> (hosted locally) to load more posts
@@ -79,14 +79,14 @@ function ikva_infinite_scroll_for_wp_help()
     </div>
 
     <style>
-        .ikva_infinite_scroll_for_wp_help {
+        .ikva_genesis_infinite_scroll_help {
             background: #ffffff;
             padding: 10px 20px;
             margin: 15px 15px 15px 0;
             max-width: 970px;
         }
 
-        .ikva_infinite_scroll_for_wp_all_animations li {
+        .ikva_genesis_infinite_scroll_all_animations li {
             display: inline-grid;
             width: 25%;
             text-align: center;
@@ -94,7 +94,7 @@ function ikva_infinite_scroll_for_wp_help()
             color: #000000;
         }
 
-        .ikva_infinite_scroll_for_wp_all_animations li > div {
+        .ikva_genesis_infinite_scroll_all_animations li > div {
             margin-top: 25px;
         }
 
@@ -104,7 +104,7 @@ function ikva_infinite_scroll_for_wp_help()
 }
 
 
-function ikva_infinite_scroll_for_wp_is_genesis_framework()
+function ikva_infinite_scroll_is_genesis_framework()
 {
 
 
@@ -124,5 +124,5 @@ function ikva_infinite_scroll_for_wp_is_genesis_framework()
 
 function ikva_infinite_scroll_animation_preview_help(array $animation)
 {
-    echo "<li>" . $animation["name"] . "<br>" . "<style>" . str_replace("[user-selected-color]", ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_color", "#333"), $animation["css"]) . "</style>" . $animation["html"] . "</li>";
+    echo "<li>" . $animation["name"] . "<br>" . "<style>" . str_replace("[user-selected-color]", ikva_infinite_scroll_get_option("ikva_genesis_infinite_scroll_configure_color", "#333"), $animation["css"]) . "</style>" . $animation["html"] . "</li>";
 }

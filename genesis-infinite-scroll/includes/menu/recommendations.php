@@ -1,5 +1,5 @@
 <?php
-function ikva_infinite_scroll_for_wp_recommendations()
+function ikva_genesis_infinite_scroll_recommendations()
 { ?>
 
     <div class="ikva-infinite-scroll-tab recommendations"></div>

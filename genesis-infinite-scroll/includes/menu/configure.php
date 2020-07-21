@@ -1,49 +1,49 @@
 <?php
 
-function ikva_infinite_scroll_for_wp_configure()
+function ikva_genesis_infinite_scroll_configure()
 {
 
-    global $ikva_infinite_scroll_for_wp_settings;
+    global $ikva_genesis_infinite_scroll_settings;
 
     $viewable_configuration = array(
 
         array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_home_page",
+            "key" => "ikva_genesis_infinite_scroll_configure_home_page",
             "title" => "Home Page",
             "description" => "",
             "linebreak" => true
         ),
 
         array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_blog",
+            "key" => "ikva_genesis_infinite_scroll_configure_blog",
             "title" => "Blog",
             "description" => "",
             "linebreak" => true
         ),
 
         array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_category_archives",
+            "key" => "ikva_genesis_infinite_scroll_configure_category_archives",
             "title" => "Category Archives",
             "description" => "",
             "linebreak" => true
         ),
 
         array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_tag_archives",
+            "key" => "ikva_genesis_infinite_scroll_configure_tag_archives",
             "title" => "Tag Archives",
             "description" => "",
             "linebreak" => true
         ),
 
         array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_author_archives",
+            "key" => "ikva_genesis_infinite_scroll_configure_author_archives",
             "title" => "Author Archives",
             "description" => "",
             "linebreak" => true
         ),
 
         array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_search_results",
+            "key" => "ikva_genesis_infinite_scroll_configure_search_results",
             "title" => "Search Results",
             "description" => "",
             "linebreak" => true
@@ -54,25 +54,25 @@ function ikva_infinite_scroll_for_wp_configure()
     if (isset($_POST['submit'])) {
 
 
-        $ikva_infinite_scroll_for_wp_settings = array();
+        $ikva_genesis_infinite_scroll_settings = array();
 
         foreach ($viewable_configuration as $checkbox) {
-            $ikva_infinite_scroll_for_wp_settings[$checkbox["key"]] = isset($_POST[$checkbox["key"]]);
+            $ikva_genesis_infinite_scroll_settings[$checkbox["key"]] = isset($_POST[$checkbox["key"]]);
         }
 
-        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_loading_type"] = $_POST["ikva_infinite_scroll_for_wp_configure_loading_type"];
-        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_loading_animation"] = $_POST["ikva_infinite_scroll_for_wp_configure_loading_animation"];
-        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_priority"] = $_POST["ikva_infinite_scroll_for_wp_configure_priority"];
-        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_color"] = $_POST["ikva_infinite_scroll_for_wp_configure_color"];
+        $ikva_genesis_infinite_scroll_settings["ikva_genesis_infinite_scroll_configure_loading_type"] = $_POST["ikva_genesis_infinite_scroll_configure_loading_type"];
+        $ikva_genesis_infinite_scroll_settings["ikva_genesis_infinite_scroll_configure_loading_animation"] = $_POST["ikva_genesis_infinite_scroll_configure_loading_animation"];
+        $ikva_genesis_infinite_scroll_settings["ikva_genesis_infinite_scroll_configure_priority"] = $_POST["ikva_genesis_infinite_scroll_configure_priority"];
+        $ikva_genesis_infinite_scroll_settings["ikva_genesis_infinite_scroll_configure_color"] = $_POST["ikva_genesis_infinite_scroll_configure_color"];
 
-        ikva_infinite_scroll_for_wp_save_settings($ikva_infinite_scroll_for_wp_settings);
+        ikva_genesis_infinite_scroll_save_settings($ikva_genesis_infinite_scroll_settings);
     }
 
     ?>
 
     <form method="post" class="ikva-infinite-scroll-tab configure">
 
-        <?php wp_nonce_field('ikva-infinite-scroll-for-wp', 'ikva-infinite-scroll-for-wp-form'); ?>
+        <?php wp_nonce_field('ikva-genesis-infinite-scroll', 'ikva-genesis-infinite-scroll-form'); ?>
 
         <table class="form-table" role="presentation">
 
@@ -85,7 +85,7 @@ function ikva_infinite_scroll_for_wp_configure()
 
                         <?php
                         foreach ($viewable_configuration as $checkbox) {
-                            ikva_infinite_scroll_for_wp_generate_checkbox(
+                            ikva_genesis_infinite_scroll_generate_checkbox(
                                 $checkbox["key"],
                                 $checkbox["title"],
                                 $checkbox["description"],
@@ -103,12 +103,12 @@ function ikva_infinite_scroll_for_wp_configure()
                 <td>
                     <fieldset>
                         <legend class="screen-reader-text"><span>Load next page</span></legend>
-                        <label><input type="radio" name="ikva_infinite_scroll_for_wp_configure_loading_type"
-                                      value="button" <?php echo ikva_infinite_scroll_for_wp_getRadioButtonStatus("ikva_infinite_scroll_for_wp_configure_loading_type", "button", "automatic"); ?> >
+                        <label><input type="radio" name="ikva_genesis_infinite_scroll_configure_loading_type"
+                                      value="button" <?php echo ikva_infinite_scroll_getRadioButtonStatus("ikva_genesis_infinite_scroll_configure_loading_type", "button", "automatic"); ?> >
                             On button click</label>
                         <br>
-                        <label><input type="radio" name="ikva_infinite_scroll_for_wp_configure_loading_type"
-                                      value="automatic" <?php echo ikva_infinite_scroll_for_wp_getRadioButtonStatus("ikva_infinite_scroll_for_wp_configure_loading_type", "automatic", "automatic"); ?>>
+                        <label><input type="radio" name="ikva_genesis_infinite_scroll_configure_loading_type"
+                                      value="automatic" <?php echo ikva_infinite_scroll_getRadioButtonStatus("ikva_genesis_infinite_scroll_configure_loading_type", "automatic", "automatic"); ?>>
                             Automatically when user scrolls to last post</label>
                     </fieldset>
                 </td>
@@ -116,11 +116,11 @@ function ikva_infinite_scroll_for_wp_configure()
             </tr>
 
 
-            <tr id="ikva_infinite_scroll_for_wp_configure_loading_animation">
+            <tr id="ikva_genesis_infinite_scroll_configure_loading_animation">
                 <th scope="row">Loading Animation Style</th>
                 <td>
-                    <?php $loading_animation_style_value = ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_loading_animation", "filling-circle") ?>
-                    <select name="ikva_infinite_scroll_for_wp_configure_loading_animation"
+                    <?php $loading_animation_style_value = ikva_infinite_scroll_get_option("ikva_genesis_infinite_scroll_configure_loading_animation", "filling-circle") ?>
+                    <select name="ikva_genesis_infinite_scroll_configure_loading_animation"
                             value="<?php echo $loading_animation_style_value; ?>">
 
                         <option value="filling-circle" <?php if ($loading_animation_style_value == "filling-circle") {
@@ -180,12 +180,12 @@ function ikva_infinite_scroll_for_wp_configure()
             </tr>
 
 
-            <tr id="ikva_infinite_scroll_for_wp_configure_color">
+            <tr id="ikva_genesis_infinite_scroll_configure_color">
                 <th scope="row">Animation and Button Color</th>
                 <td>
-                    <label for="ikva_infinite_scroll_for_wp_configure_color">
-                        <input name="ikva_infinite_scroll_for_wp_configure_color" type="color"
-                               value="<?php echo ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_color", "#333") ?>">
+                    <label for="ikva_genesis_infinite_scroll_configure_color">
+                        <input name="ikva_genesis_infinite_scroll_configure_color" type="color"
+                               value="<?php echo ikva_infinite_scroll_get_option("ikva_genesis_infinite_scroll_configure_color", "#333") ?>">
                     </label>
                 </td>
             </tr>
@@ -194,10 +194,10 @@ function ikva_infinite_scroll_for_wp_configure()
             <tr>
                 <th scope="row">Priority</th>
                 <td>
-                    <label for="ikva_infinite_scroll_for_wp_configure_priority">
-                        <input name="ikva_infinite_scroll_for_wp_configure_priority" type="number" step="1" min="1"
-                               id="ikva_infinite_scroll_for_wp_configure_priority"
-                               value="<?php echo ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_priority", 10) ?>"
+                    <label for="ikva_genesis_infinite_scroll_configure_priority">
+                        <input name="ikva_genesis_infinite_scroll_configure_priority" type="number" step="1" min="1"
+                               id="ikva_genesis_infinite_scroll_configure_priority"
+                               value="<?php echo ikva_infinite_scroll_get_option("ikva_genesis_infinite_scroll_configure_priority", 10) ?>"
                                class="small-text">
                     </label> <i>Try increasing or decreasing the priority if you notice any alignment issues during
                         infinite scroll.</i>
