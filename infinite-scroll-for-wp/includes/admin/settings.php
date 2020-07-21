@@ -1,8 +1,8 @@
 <?php
 
-include_once(ikva_genesis_infinite_scroll_PLUGIN_DIR . '/includes/menu/configure.php');
-include_once(ikva_genesis_infinite_scroll_PLUGIN_DIR . '/includes/menu/help.php');
-include_once(ikva_genesis_infinite_scroll_PLUGIN_DIR . '/includes/menu/recommendations.php');
+include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/configure.php');
+include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/help.php');
+include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/recommendations.php');
 
 //Showing success message after saving the plugin configuration
 if (isset($_POST['submit'])) {
@@ -16,13 +16,13 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : "configure";
     <div class="wrap">
         <h1>Infinite Scroll for Genesis from ikva eSolutions</h1>
         <h2 class="nav-tab-wrapper" style="margin-top: 10px">
-            <a href="?page=<?php echo ikva_genesis_infinite_scroll_SETTINGS_SLUG ?>&tab=configure"
+            <a href="?page=<?php echo ikva_infinite_scroll_for_wp_SETTINGS_SLUG ?>&tab=configure"
                class="nav-tab <?php echo $current_tab == 'configure' ? 'nav-tab-active' : ''; ?>"><span
                         class="dashicons dashicons-admin-generic ikva-infinite-scroll-tab-icons"></span>Configure</a>
-            <a href="?page=<?php echo ikva_genesis_infinite_scroll_SETTINGS_SLUG ?>&tab=help"
+            <a href="?page=<?php echo ikva_infinite_scroll_for_wp_SETTINGS_SLUG ?>&tab=help"
                class="nav-tab <?php echo $current_tab == 'help' ? 'nav-tab-active' : ''; ?>"><span
                         class="dashicons dashicons-sos ikva-infinite-scroll-tab-icons"></span>Help</a>
-            <a href="?page=<?php echo ikva_genesis_infinite_scroll_SETTINGS_SLUG ?>&tab=recommendations"
+            <a href="?page=<?php echo ikva_infinite_scroll_for_wp_SETTINGS_SLUG ?>&tab=recommendations"
                class="nav-tab <?php echo $current_tab == 'recommendations' ? 'nav-tab-active' : ''; ?>"><span
                         class="dashicons dashicons-megaphone ikva-infinite-scroll-tab-icons"></span></span>Our
                 Recommendations</a>
@@ -74,16 +74,16 @@ function showCurrentTab(string $current_tab)
 
     switch ($current_tab) {
         case 'configure':
-            ikva_genesis_infinite_scroll_configure();
+            ikva_infinite_scroll_for_wp_configure();
             break;
         case 'help':
-            ikva_genesis_infinite_scroll_help();
+            ikva_infinite_scroll_for_wp_help();
             break;
         case 'recommendations':
-            ikva_genesis_infinite_scroll_recommendations();
+            ikva_infinite_scroll_for_wp_recommendations();
             break;
         default:
-            ikva_genesis_infinite_scroll_configure();
+            ikva_infinite_scroll_for_wp_configure();
     }
 
 }
