@@ -1,50 +1,50 @@
 <?php
 
-class AnimationHelper
+class IkvaInfiniteScrollAnimationHelper
 {
 
-    function code(string $style)
+    function ikva_infinite_scroll_animation_helper_getCode(string $style)
     {
 
         switch ($style) {
             case "solid-square":
-                return $this->solidSquareAnimation();
+                return $this->ikva_infinite_scroll_animation_solidSquare();
                 break;
             case "chasing-dots":
-                return $this->chasingDots();
+                return $this->ikva_infinite_scroll_animation_chasingDots();
                 break;
             case "circle-bounce":
-                return $this->circleBounce();
+                return $this->ikva_infinite_scroll_animation_circleBounce();
                 break;
             case "jumping-waves":
-                return $this->jumpingWaves();
+                return $this->ikva_infinite_scroll_animation_jumpingWaves();
                 break;
             case "ripple-effect":
-                return $this->rippleEffect();
+                return $this->ikva_infinite_scroll_animation_rippleEffect();
                 break;
             case "bouncing-bubbles":
-                return $this->bouncingBubbles();
+                return $this->ikva_infinite_scroll_animation_bouncingBubbles();
                 break;
             case "magic-cubes":
-                return $this->magicCubes();
+                return $this->ikva_infinite_scroll_animation_magicCubes();
                 break;
-            case "buffering":
-                return $this->buffering();
+            case "ikva_infinite_scroll_animation_buffering":
+                return $this->ikva_infinite_scroll_animation_buffering();
                 break;
             case "folding-cubes":
-                return $this->foldingCubes();
+                return $this->ikva_infinite_scroll_animation_foldingCubes();
                 break;
             case "filling-circle":
-                return $this->fillingCircle();
+                return $this->ikva_infinite_scroll_animation_fillingCircle();
                 break;
             default:
-                return $this->solidSquareAnimation();
+                return $this->ikva_infinite_scroll_animation_solidSquare();
         }
 
     }
 
 
-    function solidSquareAnimation()
+    function ikva_infinite_scroll_animation_solidSquare()
     {
         return array(
             "name" => "Solid Square",
@@ -53,7 +53,7 @@ class AnimationHelper
         );
     }
 
-    function chasingDots()
+    function ikva_infinite_scroll_animation_chasingDots()
     {
         return array(
             "name" => "Chasing Dots",
@@ -62,7 +62,7 @@ class AnimationHelper
         );
     }
 
-    function circleBounce()
+    function ikva_infinite_scroll_animation_circleBounce()
     {
         return array(
             "name" => "Circle Bounce",
@@ -71,7 +71,7 @@ class AnimationHelper
         );
     }
 
-    function jumpingWaves()
+    function ikva_infinite_scroll_animation_jumpingWaves()
     {
         return array(
             "name" => "Jumping Waves",
@@ -81,7 +81,7 @@ class AnimationHelper
     }
 
 
-    function rippleEffect()
+    function ikva_infinite_scroll_animation_rippleEffect()
     {
         return array(
             "name" => "Ripple Effect",
@@ -91,7 +91,7 @@ class AnimationHelper
     }
 
 
-    function bouncingBubbles()
+    function ikva_infinite_scroll_animation_bouncingBubbles()
     {
         return array(
             "name" => "Bouncing Bubbles",
@@ -100,7 +100,7 @@ class AnimationHelper
         );
     }
 
-    function magicCubes()
+    function ikva_infinite_scroll_animation_magicCubes()
     {
         return array(
             "name" => "Magic Cubes",
@@ -110,7 +110,7 @@ class AnimationHelper
     }
 
 
-    function buffering()
+    function ikva_infinite_scroll_animation_buffering()
     {
         return array(
             "name" => "Buffering",
@@ -119,7 +119,7 @@ class AnimationHelper
         );
     }
 
-    function foldingCubes()
+    function ikva_infinite_scroll_animation_foldingCubes()
     {
         return array(
             "name" => "Folding Cubes",
@@ -129,7 +129,7 @@ class AnimationHelper
     }
 
 
-    function fillingCircle()
+    function ikva_infinite_scroll_animation_fillingCircle()
     {
         return array(
             "name" => "Filling Circle",

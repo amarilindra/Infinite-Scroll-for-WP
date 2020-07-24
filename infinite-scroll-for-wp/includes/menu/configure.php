@@ -57,13 +57,13 @@ function ikva_infinite_scroll_for_wp_configure()
         $ikva_infinite_scroll_for_wp_settings = array();
 
         foreach ($viewable_configuration as $checkbox) {
-            $ikva_infinite_scroll_for_wp_settings[$checkbox["key"]] = isset($_POST[$checkbox["key"]]);
+            $ikva_infinite_scroll_for_wp_settings[$checkbox["key"]] = esc_html( sanitize_text_field(isset($_POST[$checkbox["key"]])));
         }
 
-        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_loading_type"] = $_POST["ikva_infinite_scroll_for_wp_configure_loading_type"];
-        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_loading_animation"] = $_POST["ikva_infinite_scroll_for_wp_configure_loading_animation"];
-        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_priority"] = $_POST["ikva_infinite_scroll_for_wp_configure_priority"];
-        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_color"] = $_POST["ikva_infinite_scroll_for_wp_configure_color"];
+        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_loading_type"] = esc_html( sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_loading_type"]));
+        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_loading_animation"] = esc_html( sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_loading_animation"]));
+        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_priority"] = esc_html( sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_priority"]));
+        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_color"] = esc_html( sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_color"]));
 
         ikva_infinite_scroll_for_wp_save_settings($ikva_infinite_scroll_for_wp_settings);
     }
@@ -163,7 +163,7 @@ function ikva_infinite_scroll_for_wp_configure()
                         } ?>>Magic Cubes
                         </option>
 
-                        <option value="buffering" <?php if ($loading_animation_style_value == "buffering") {
+                        <option value="buffering" <?php if ($loading_animation_style_value == "ikva_infinite_scroll_animation_buffering") {
                             echo 'selected';
                         } ?>>Buffering
                         </option>

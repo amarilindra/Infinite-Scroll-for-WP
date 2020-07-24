@@ -31,7 +31,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : "configure";
                         style="margin-top: 2px;"></span>Buy me a Burger</a>
         </h2>
 
-        <?php showCurrentTab($current_tab); ?>
+        <?php ikva_infinite_scroll_showCurrentTab($current_tab); ?>
 
         <style>
             .ikva-infinite-scroll-tab-icons {
@@ -69,7 +69,7 @@ $current_tab = isset($_GET['tab']) ? $_GET['tab'] : "configure";
 <?php
 
 
-function showCurrentTab(string $current_tab)
+function ikva_infinite_scroll_showCurrentTab(string $current_tab)
 {
 
     switch ($current_tab) {

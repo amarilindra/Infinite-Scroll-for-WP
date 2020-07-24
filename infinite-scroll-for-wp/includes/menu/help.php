@@ -3,7 +3,7 @@
 function ikva_infinite_scroll_for_wp_help()
 {
 
-    $animationHelper = new AnimationHelper();
+    $animationHelper = new IkvaInfiniteScrollAnimationHelper();
 
     ?>
 
@@ -47,16 +47,16 @@ function ikva_infinite_scroll_for_wp_help()
         <div class="ikva_infinite_scroll_for_wp_all_animations">
             <ul>
                 <?php
-                ikva_infinite_scroll_animation_preview_help($animationHelper->solidSquareAnimation());
-                ikva_infinite_scroll_animation_preview_help($animationHelper->chasingDots());
-                ikva_infinite_scroll_animation_preview_help($animationHelper->circleBounce());
-                ikva_infinite_scroll_animation_preview_help($animationHelper->jumpingWaves());
-                ikva_infinite_scroll_animation_preview_help($animationHelper->rippleEffect());
-                ikva_infinite_scroll_animation_preview_help($animationHelper->bouncingBubbles());
-                ikva_infinite_scroll_animation_preview_help($animationHelper->magicCubes());
-                ikva_infinite_scroll_animation_preview_help($animationHelper->buffering());
-                ikva_infinite_scroll_animation_preview_help($animationHelper->foldingCubes());
-                ikva_infinite_scroll_animation_preview_help($animationHelper->fillingCircle());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_solidSquare());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_chasingDots());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_circleBounce());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_jumpingWaves());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_rippleEffect());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_bouncingBubbles());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_magicCubes());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_buffering());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_foldingCubes());
+                ikva_infinite_scroll_animation_preview_help($animationHelper->ikva_infinite_scroll_animation_fillingCircle());
                 ?>
             </ul>
         </div>

@@ -13,7 +13,7 @@ function ikva_infinite_scroll_for_wp_front_scripts()
 
     if (
         ((is_front_page() || is_home()) && $ikva_infinite_scroll_for_wp_home) ||
-        (is_blog() && $ikva_infinite_scroll_for_wp_blog) ||
+        (ikva_infinite_scroll_is_blog() && $ikva_infinite_scroll_for_wp_blog) ||
         (is_category() && $ikva_infinite_scroll_for_wp_category) ||
         (is_tag() && $ikva_infinite_scroll_for_wp_tag) ||
         (is_author() && $ikva_infinite_scroll_for_wp_author) ||
@@ -93,8 +93,8 @@ function ikva_infinite_scroll_for_wp_getLoadingAnimationDetails()
 {
     $animation_style = ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_loading_animation", "filling-circle");
 
-    $animationHelper = new AnimationHelper();
-    return $animationHelper->code($animation_style);
+    $animationHelper = new IkvaInfiniteScrollAnimationHelper();
+    return $animationHelper->ikva_infinite_scroll_animation_helper_getCode($animation_style);
 
 }
 
@@ -151,7 +151,7 @@ function ikva_infinite_scroll_for_wp_type_automatic($animationHTML)
     <?php
 }
 
-function is_blog(){
+function ikva_infinite_scroll_is_blog(){
         if ( is_front_page() && is_home() ) {
             return false;
         } elseif ( is_front_page() ) {

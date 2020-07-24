@@ -9,7 +9,7 @@ function ikva_infinite_scroll_for_wp_recommendations()
 
         <div class="ikva-grid-box-container">
             <div class="ikva-image-container cloudways">
-                <img src="https://ikvaesolutions.com/wp-content/uploads/2020/07/cloudways.png">
+                <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/cloudways.png'?>">
             </div>
             <div class="ikva-grid-box-wrap">
                 <h2>Cloudways</h2>
@@ -23,7 +23,7 @@ function ikva_infinite_scroll_for_wp_recommendations()
 
         <div class="ikva-grid-box-container">
             <div class="ikva-image-container wp-rocket">
-                <img src="https://ikvaesolutions.com/wp-content/uploads/2020/07/wp-rocket.png" style="margin-top: 10px">
+                <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/wp-rocket.png'?>" style="margin-top: 10px">
             </div>
             <div class="ikva-grid-box-wrap">
                 <h2>WP Rocket</h2>
@@ -36,7 +36,7 @@ function ikva_infinite_scroll_for_wp_recommendations()
 
         <div class="ikva-grid-box-container">
             <div class="ikva-image-container bunnycdn">
-                <img src="https://ikvaesolutions.com/wp-content/uploads/2020/07/bunnycdn.png">
+                <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/bunnycdn.png'?>">
             </div>
             <div class="ikva-grid-box-wrap">
                 <h2>BunnyCDN</h2>
@@ -59,7 +59,7 @@ function ikva_infinite_scroll_for_wp_recommendations()
 
         <div class="ikva-grid-box-container">
             <div class="ikva-image-container wpdroid">
-                <img src="https://ikvaesolutions.com/wp-content/uploads/2020/07/wp-droid.png">
+                <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/wp-droid.png'?>">
             </div>
             <div class="ikva-grid-box-wrap">
                 <h2>WP Droid</h2>
@@ -80,7 +80,7 @@ function ikva_infinite_scroll_for_wp_recommendations()
 
         <div class="ikva-grid-box-container">
             <div class="ikva-image-container notification-history-log">
-                <img src="https://ikvaesolutions.com/wp-content/uploads/2020/07/notification-history-log.png"
+                <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/notification-history-log.png'?>"
                      style="width: 75px">
             </div>
             <div class="ikva-grid-box-wrap">
@@ -105,7 +105,7 @@ function ikva_infinite_scroll_for_wp_recommendations()
 
         <div class="ikva-grid-box-container">
             <div class="ikva-image-container geekdashboard">
-                <img src="https://ikvaesolutions.com/wp-content/uploads/2020/07/geekdashboard.png" width="150">
+                <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/geekdashboard.png'?>" width="150">
             </div>
             <div class="ikva-grid-box-wrap">
                 <h2>Geek Dashboard</h2>
@@ -126,7 +126,7 @@ function ikva_infinite_scroll_for_wp_recommendations()
 
         <div class="ikva-grid-box-container">
             <div class="ikva-image-container wordpress">
-                <img src="https://ikvaesolutions.com/wp-content/uploads/2020/07/wordpress.png" style="width: 75px">
+                <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/wordpress.png'?>" style="width: 75px">
             </div>
             <div class="ikva-grid-box-wrap">
                 <h2 style="line-height: 25px">WordPress Theme / Plugin Customization and Development</h2>
@@ -141,7 +141,7 @@ function ikva_infinite_scroll_for_wp_recommendations()
 
         <div class="ikva-grid-box-container">
             <div class="ikva-image-container android">
-                <img src="https://ikvaesolutions.com/wp-content/uploads/2020/07/android.png" style="width: 75px">
+                <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/android.png'?>" style="width: 75px">
             </div>
             <div class="ikva-grid-box-wrap">
                 <h2>Android Apps Development</h2>
