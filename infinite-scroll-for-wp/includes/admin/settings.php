@@ -1,21 +1,17 @@
 <?php
 
-include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/configure.php');
-include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/help.php');
-include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/recommendations.php');
-
 //Showing success message after saving the plugin configuration
 if (isset($_POST['submit'])) {
     echo '<div class="notice-success is-dismissible notice"><p>Infinite scroll configuration saved successfully 🎉</p></div>';
 }
 
-$current_tab = isset($_GET['tab']) ? $_GET['tab'] : "configure";
+$current_tab = isset($_GET['tab']) ? esc_html($_GET['tab']) : "configure";
 
 ?>
 
     <div class="wrap">
         <h1>Infinite Scroll for Genesis from ikva eSolutions</h1>
-        <h2 class="nav-tab-wrapper" style="margin-top: 10px">
+        <h2 class="nav-tab-wrapper ikva-infinite-scroll-tabs" style="margin-top: 10px">
             <a href="?page=<?php echo ikva_infinite_scroll_for_wp_SETTINGS_SLUG ?>&tab=configure"
                class="nav-tab <?php echo $current_tab == 'configure' ? 'nav-tab-active' : ''; ?>"><span
                         class="dashicons dashicons-admin-generic ikva-infinite-scroll-tab-icons"></span>Configure</a>
@@ -74,16 +70,20 @@ function ikva_infinite_scroll_showCurrentTab(string $current_tab)
 
     switch ($current_tab) {
         case 'configure':
+            include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/configure.php');
             ikva_infinite_scroll_for_wp_configure();
             break;
         case 'help':
+            include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/help.php');
             ikva_infinite_scroll_for_wp_help();
             break;
         case 'recommendations':
+            include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/recommendations.php');
             ikva_infinite_scroll_for_wp_recommendations();
             break;
         default:
-            ikva_infinite_scroll_for_wp_configure();
+            include_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/menu/unauthorized.php');
+            ikva_infinite_scroll_for_wp_unauthorized();
     }
 
 }

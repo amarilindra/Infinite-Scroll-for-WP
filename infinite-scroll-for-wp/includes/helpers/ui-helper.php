@@ -46,7 +46,7 @@ function ikva_infinite_scroll_for_wp_get_option(string $key, string $default) {
     global $ikva_infinite_scroll_for_wp_settings;
 
     if(array_key_exists($key, $ikva_infinite_scroll_for_wp_settings)) {
-        return $ikva_infinite_scroll_for_wp_settings[$key];
+        return esc_html($ikva_infinite_scroll_for_wp_settings[$key]);
     } else {
         return $default;
     }

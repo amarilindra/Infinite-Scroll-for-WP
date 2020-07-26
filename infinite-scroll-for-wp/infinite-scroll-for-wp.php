@@ -51,5 +51,6 @@ function ikva_infinite_scroll_for_wp_save_settings($settings)
     }
 }
 
+
 //Finally loading the infinite scroll logic on the front end depending on plugin configuration
 require_once(ikva_infinite_scroll_for_wp_PLUGIN_DIR . '/includes/front/infinite-scroll.php');
