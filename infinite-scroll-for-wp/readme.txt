@@ -4,8 +4,8 @@ Donate link: https://ikvaesolutions.com/go/donate
 Tags: Genesis, Infinite Scroll, UI, User Experience, Pagination
 Requires at least: 4.7
 Tested up to: 5.4.2
-Stable tag: 1.0
-Version: 1.0
+Stable tag: 1.0.1
+Version: 1.0.1
 Requires PHP: 5.2.4
 License: GPLv2 or later
 
@@ -80,9 +80,14 @@ Both options have their own pros and cons. If you have important information in 
 4. Color Picker for Button and Animations
 
 
-== Changelog ==
+== Changelogs ==
+
+= v1.0.1=
+*Release Date -  28 July 2020*
+
+*Minor Bug Fixes.
 
 = 1.0 =
-*Release Date - 18 July 2020*
+*Release Date - 28 July 2020*
 
 * Initial release.
