@@ -1,4 +1,4 @@
-<img src="images/banner-1544x500.jpg" alt="Infite Scroll for WP" />
+<img src="images/banner-1544x500.png" alt="Infite Scroll for WP" />
 
 Easily add infinite scroll to your Genesis child themes. You have a couple of options to load more posts on a button click (without page reload) or automatically when the user scrolls to the end of the last post.
 
@@ -67,6 +67,11 @@ Both options have their own pros and cons. If you have important information in 
 
 # Changelog
 
-#### v1.0
-* Release Date - 18 July 2020
+#### v1.0.2 (31 July 2020)
+* Minor Bug Fixes.
+
+#### v1.0.1 (30 July 2020)
+* Minor Bug Fixes.
+
+#### v1.0 (28 July 2020)
 * Initial release.
