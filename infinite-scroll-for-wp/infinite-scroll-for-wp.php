@@ -4,7 +4,7 @@
  * Plugin Name: Infinite Scroll for Genesis
  * Plugin URI: https://ikvaesolutions.com/
  * Description: Adds infinite scroll on front page, blog, archives and search results for themes running on Genesis Framework.
- * Version: 1.0.2
+ * Version: 1.0
  * Author: Amar Ilindra
  * Author URI: https://www.geekdashboard.com/
  */
