@@ -4,8 +4,8 @@ Donate link: https://ikvaesolutions.com/go/donate
 Tags: Genesis, Infinite Scroll, UI, User Experience, Pagination
 Requires at least: 4.7
 Tested up to: 5.4.2
-Stable tag: 1.0.1
-Version: 1.0.1
+Stable tag: 1.0.2
+Version: 1.0.2
 Requires PHP: 5.2.4
 License: GPLv2 or later
 
@@ -19,7 +19,6 @@ Easily add infinite scroll to your Genesis child themes. You have a couple of op
 
 [View Demo on Geek Dashboard](https://www.geekdashboard.com/category/news/)
 
-
 Features of Infinite Scroll for Genesis:
 
 * Lightweight implementation.
@@ -30,10 +29,9 @@ Features of Infinite Scroll for Genesis:
 * No CSS files added to your pages.
 * Proper conditional checking to execute the plugin only on the selected pages.
 * No additional load on your regular posts since infinite scroll on posts is meaningless.
-* SEO Friendly. Your regular Pagination (/page/1, /page/2 etc.) still works with proper canonical links.
+* SEO Friendly. Your regular Pagination (/page/1, /page/2, etc.) still work with proper canonical links.
 
-If you have any questions about our service or plugin, don't hesitate to contact us from our official website [Geek Dashboard](https://www.geekdashboard.com/)
-
+If you have any questions about our plugin, don't hesitate to contact us from our official website [Geek Dashboard](https://www.geekdashboard.com/)
 
 == Installation ==
 
@@ -49,7 +47,6 @@ If you would prefer to do things manually then follow these instructions:
 1. Extract the downloaded plugin file.
 1. Upload the `infinite-scroll-for-wp` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
-
 
 == Frequently Asked Questions ==
 
@@ -71,23 +68,20 @@ For example, check the home page of the [Geek Dashboard](https://www.geekdashboa
 == Loading posts "Automatically on scroll" or "On Button Click". Which one to use and why? ==
 Both options have their own pros and cons. If you have important information in site footer or sidebar(on mobiles), you should use "On Button Click" to load more posts. So the user will have a chance to view your sidebar and footer. If you wish to save a user click and no critical information is available in the sidebar or the footer, you can choose to load posts automatically when the user scrolls to the end of the list.
 
-
 == Screenshots ==
 
 1. Plugin options
-2. Available Animations 
+2. Available Animations
 3. All Animations Preview
 4. Color Picker for Button and Animations
 
+== Changelog ==
 
-== Changelogs ==
+= v1.0.2 (31 July 2020) =
+* Minor Bug Fixes.
 
-= v1.0.1=
-*Release Date -  28 July 2020*
+= v1.0.1 (30 July 2020) =
+* Minor Bug Fixes.
 
-*Minor Bug Fixes.
-
-= 1.0 =
-*Release Date - 28 July 2020*
-
+= v1.0 (28 July 2020) =
 * Initial release.

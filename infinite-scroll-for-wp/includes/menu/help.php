@@ -65,15 +65,15 @@ function ikva_infinite_scroll_for_wp_help()
     <div class="ikva_infinite_scroll_for_wp_help">
         <h3>I have a feature suggestion / I want to report a bug</h3>
         <p>To report bugs or to suggest new features, please visit the <a
-                    href="https://github.com/amarilindra/Infinite-Scroll-for-WP" target="_blank">GitHub repo</a>
-            or <a href="https://ikvaesolutions.com/go/infinite-scroll-for-wp-github" target="_blank">WordPress plugin
+                    href="https://ikvaesolutions.com/go/infinite-scroll-for-wp-github" target="_blank">GitHub repo</a>
+            or <a href="https://ikvaesolutions.com/go/infinite-scroll-for-wp" target="_blank">WordPress plugin
                 page</a>. Alternatively, you can get in touch with us at <a href="mailto:contact@ikvaesolutions.com">contact@ikvaesolutions.com</a>
             or <a href="mailto:contact@geekdashboard.com">contact@geekdashboard.com</a></p>
     </div>
     <div class="ikva_infinite_scroll_for_wp_help">
         <h3>How does this plugin work?</h3>
-        <p>This plugin is using <a href="https://unpkg.com/infinite-scroll@3.0.6/dist/infinite-scroll.pkgd.min.js"
-                                   target="_blank">infinite-scroll.pkgd.min.js</a> (hosted locally) to load more posts
+        <p>This plugin is using <a href="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/js/infinite-scroll.pkgd.min.js'?>"
+                                   target="_blank">infinite-scroll.pkgd.min.js</a> to load more posts
             and special thanks to Tobiasahlin's <a href="https://tobiasahlin.com/spinkit/" target="_blank">Spinkit</a>
             for loading animations with pure CSS</p>
     </div>
