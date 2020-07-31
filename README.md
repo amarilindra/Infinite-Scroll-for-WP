@@ -21,6 +21,7 @@ Easily add infinite scroll to your Genesis child themes. You have a couple of op
 
 If you have any questions about our service or plugin, don't hesitate to contact us from our official website [Geek Dashboard](https://www.geekdashboard.com/)
 
+<a href="https://www.producthunt.com/posts/infinite-scroll-for-genesis?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-infinite-scroll-for-genesis" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=225234&theme=light" alt="Infinite Scroll for Genesis - Easily add infinite scroll to your Genesis child themes | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a>
 
 # How to Install?
 
