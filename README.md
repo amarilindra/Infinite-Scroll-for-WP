@@ -38,6 +38,8 @@ If you would prefer to do things manually then follow these instructions:
 1. Upload the `infinite-scroll-fpr-wp` folder to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
+#### Video Tutorial
+[![Infinite Scroll For Genesis Child Themes](http://img.youtube.com/vi/WIsUux0B2Z8/0.jpg)](http://www.youtube.com/watch?v=WIsUux0B2Z8 "Enable Infinite Scroll on Genesis Child Themes")
 
 # Frequently Asked Questions
 
