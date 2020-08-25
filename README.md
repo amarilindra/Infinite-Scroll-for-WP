@@ -4,7 +4,7 @@ Easily add infinite scroll to your Genesis child themes. You have a couple of op
 
 10 different loading animations gives you plenty of options to choose from. You can literally set any color to the loading icons that suit your brand color.
 
-[View Demo on Geek Dashboard](https://www.geekdashboard.com/category/news/)
+[View Demo](https://www.geekdashboard.com/category/news/)
 
 
 # Features of Infinite Scroll for Genesis:
@@ -18,6 +18,9 @@ Easily add infinite scroll to your Genesis child themes. You have a couple of op
 * Proper conditional checking to execute the plugin only on the selected pages.
 * No additional load on your regular posts since infinite scroll on posts is meaningless.
 * SEO Friendly. Your regular Pagination (/page/1, /page/2 etc.) still works with proper canonical links.
+
+[Learn More About Infinite Scroll for Genesis Featurs](https://www.geekdashboard.com/add-infinite-scroll-to-genesis/)
+
 
 If you have any questions about our service or plugin, don't hesitate to contact us from our official website [Geek Dashboard](https://www.geekdashboard.com/)
 
