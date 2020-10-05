@@ -64,6 +64,8 @@ function ikva_infinite_scroll_for_wp_configure()
         $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_loading_animation"] = sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_loading_animation"]);
         $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_priority"] = sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_priority"]);
         $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_color"] = sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_color"]);
+        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_button_text"] = sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_button_text"]);
+        $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_end_message"] = sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_end_message"]);
 
         ikva_infinite_scroll_for_wp_save_settings($ikva_infinite_scroll_for_wp_settings);
     }
@@ -190,6 +192,29 @@ function ikva_infinite_scroll_for_wp_configure()
                 </td>
             </tr>
 
+            <tr>
+                <th scope="row">Button Text</th>
+                <td>
+                    <label for="ikva_infinite_scroll_for_wp_configure_button_text">
+                        <input name="ikva_infinite_scroll_for_wp_configure_button_text" type="text" maxlength="50"
+                               id="ikva_infinite_scroll_for_wp_configure_button_text"
+                               value="<?php echo ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_button_text", "Load More") ?>"
+                               >
+                    </label>
+                </td>
+            </tr>
+
+            <tr>
+                <th scope="row">End Page Message</th>
+                <td>
+                    <label for="ikva_infinite_scroll_for_wp_configure_end_message">
+                        <input name="ikva_infinite_scroll_for_wp_configure_end_message" type="text" maxlength="200"
+                               id="ikva_infinite_scroll_for_wp_configure_end_message"
+                               value="<?php echo ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_end_message", "That's all folks. No other posts to show") ?>"
+                        >
+                    </label>
+                </td>
+            </tr>
 
             <tr>
                 <th scope="row">Priority</th>

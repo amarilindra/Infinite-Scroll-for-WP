@@ -84,6 +84,15 @@ function ikva_infinite_scroll_for_wp_help()
             padding: 10px 20px;
             margin: 15px 15px 15px 0;
             max-width: 970px;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .ikva_infinite_scroll_for_wp_help:hover {
+            box-shadow: 0 0 15px 5px #eaeaea;
+            transform: scale(1.02);
+            cursor: help;
         }
 
         .ikva_infinite_scroll_for_wp_all_animations li {

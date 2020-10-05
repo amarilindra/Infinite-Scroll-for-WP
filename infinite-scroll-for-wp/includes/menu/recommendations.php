@@ -176,11 +176,15 @@ function ikva_infinite_scroll_for_wp_recommendations()
             border-radius: 5px;
             background: #fff;
             margin: 15px;
+            -webkit-transition: all .3s;
+            -moz-transition: all .3s;
+            transition: all .3s;
         }
 
         .ikva-grid-box-container:hover {
             cursor: pointer;
             box-shadow: 0 0 15px 5px #eaeaea;
+            transform: scale(1.02);
         }
 
         .ikva-grid-box-wrap {

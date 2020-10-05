@@ -40,7 +40,8 @@ function ikva_infinite_scroll_for_wp_opening_tag()
 
 function ikva_infinite_scroll_for_wp_closing_tag()
 {
-    echo '</div><div class="ikva-infinite-scroll-page-load-status"><div class="ikva-infinite-scroll-loader infinite-scroll-request" style="display:none"></div><p class="infinite-scroll-last ikva-page-load-status-end" style="display:none">No more posts to show</p></div><div class="ikva-load-more-button-holder infinite-scroll-request" style="margin-bottom: 50px;"></div>';
+    $endMessage = ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_end_message", "That's all folks. No other posts to show");
+    echo '</div><div class="ikva-infinite-scroll-page-load-status"><div class="ikva-infinite-scroll-loader infinite-scroll-request" style="display:none"></div><p class="infinite-scroll-last ikva-page-load-status-end" style="display:none">' . $endMessage . '</p></div><div class="ikva-load-more-button-holder infinite-scroll-request" style="margin-bottom: 50px;"></div>';
 }
 
 
@@ -56,11 +57,13 @@ function ikva_infinite_scroll_for_wp_footer()
     $animationCSS = str_replace("[user-selected-color]", $animationColor, $animationDetails["css"]);
     $loadMoreButtonCSS = "";
 
+    $buttonText = ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_button_text", "Load More");
+
     if ($loadingType === "automatic") {
         ikva_infinite_scroll_for_wp_type_automatic($animationHTML);
     } else {
-        $loadMoreButtonHTML = "<button class=\"ikva-view-more-button\">Load More</button>";
-        $loadMoreButtonCSS = ".ikva-load-more-button-holder{text-align:center;margin-top:50px}.ikva-view-more-button{background:[user-selected-color];color:#fff;padding:10px 25px;border-radius:5px;text-transform:uppercase;font-family:inherit;font-weight:700}.ikva-view-more-button:hover{opacity:.9;cursor:pointer}.ikva-view-more-button:disabled,.ikva-view-more-button[disabled=disabled]{opacity:.5;cursor:not-allowed;display:none;}";
+        $loadMoreButtonHTML = "<button class=\"ikva-view-more-button\">$buttonText</button>";
+        $loadMoreButtonCSS = ".ikva-load-more-button-holder{text-align:center;margin-top:50px}.ikva-view-more-button{background:[user-selected-color];color:#fff;padding:10px 25px;border-radius:5px;font-family:inherit;font-weight:700}.ikva-view-more-button:hover{opacity:.9;cursor:pointer}.ikva-view-more-button:disabled,.ikva-view-more-button[disabled=disabled]{opacity:.5;cursor:not-allowed;display:none;}";
         $loadMoreButtonCSS = str_replace("[user-selected-color]", $animationColor, $loadMoreButtonCSS);
         ikva_infinite_scroll_for_wp_type_button($animationHTML, $loadMoreButtonHTML);
     }
@@ -104,20 +107,24 @@ function ikva_infinite_scroll_for_wp_type_button($animationHTML, $loadMoreButton
     <script>
         jQuery(document).ready(function ($) {
 
-            jQuery(".ikva-load-more-button-holder").append('<?php echo $loadMoreButtonHTML; ?>');
-            jQuery(".ikva-infinite-scroll-loader").append('<?php echo $animationHTML; ?>');
+            if ($('.pagination-next').length) {
 
-            jQuery('.ikva-infinite-posts').infiniteScroll({
-                path: '.pagination-next a',
-                append: '.entry',
-                history: 'push',
-                hideNav: '.pagination',
-                historyTitle: true,
-                status: '.ikva-infinite-scroll-page-load-status',
-                debug: false,
-                button: '.ikva-view-more-button',
-                scrollThreshold: false,
-            });
+                jQuery(".ikva-load-more-button-holder").append('<?php echo $loadMoreButtonHTML; ?>');
+                jQuery(".ikva-infinite-scroll-loader").append('<?php echo $animationHTML; ?>');
+
+                jQuery('.ikva-infinite-posts').infiniteScroll({
+                    path: '.pagination-next a',
+                    append: '.entry',
+                    history: 'push',
+                    hideNav: '.pagination',
+                    historyTitle: true,
+                    status: '.ikva-infinite-scroll-page-load-status',
+                    debug: false,
+                    button: '.ikva-view-more-button',
+                    scrollThreshold: false,
+                });
+
+            }
 
         });
     </script>
@@ -132,18 +139,21 @@ function ikva_infinite_scroll_for_wp_type_automatic($animationHTML)
 
         jQuery(document).ready(function ($) {
 
-            jQuery(".ikva-infinite-scroll-loader").append('<?php echo $animationHTML; ?>');
+            if ($('.pagination-next').length) {
 
-            jQuery('.ikva-infinite-posts').infiniteScroll({
-                path: '.pagination-next a',
-                append: '.entry',
-                history: 'push',
-                hideNav: '.pagination',
-                historyTitle: true,
-                status: '.ikva-infinite-scroll-page-load-status',
-                debug: false,
-                scrollThreshold: 100,
-            });
+                jQuery(".ikva-infinite-scroll-loader").append('<?php echo $animationHTML; ?>');
+
+                jQuery('.ikva-infinite-posts').infiniteScroll({
+                    path: '.pagination-next a',
+                    append: '.entry',
+                    history: 'push',
+                    hideNav: '.pagination',
+                    historyTitle: true,
+                    status: '.ikva-infinite-scroll-page-load-status',
+                    debug: false,
+                    scrollThreshold: 100,
+                });
+            }
 
         });
     </script>
@@ -151,14 +161,15 @@ function ikva_infinite_scroll_for_wp_type_automatic($animationHTML)
     <?php
 }
 
-function ikva_infinite_scroll_is_blog(){
-        if ( is_front_page() && is_home() ) {
-            return false;
-        } elseif ( is_front_page() ) {
-            return false;
-        } elseif ( is_home() ) {
-            return get_option( 'page_for_posts' ); // Returns blog page ID
-        } else {
-            return false;
-        }
+function ikva_infinite_scroll_is_blog()
+{
+    if (is_front_page() && is_home()) {
+        return false;
+    } elseif (is_front_page()) {
+        return false;
+    } elseif (is_home()) {
+        return get_option('page_for_posts'); // Returns blog page ID
+    } else {
+        return false;
     }
+}

@@ -3,9 +3,9 @@ Contributors: amarilindra, ikvaesolutions
 Donate link: https://ikvaesolutions.com/go/donate
 Tags: Genesis, Infinite Scroll, UI, User Experience, Pagination
 Requires at least: 4.7
-Tested up to: 5.4.2
-Stable tag: 1.0.2
-Version: 1.0.2
+Tested up to: 5.5.1
+Stable tag: 1.1
+Version: 1.1
 Requires PHP: 5.2.4
 License: GPLv2 or later
 
@@ -17,9 +17,9 @@ Easily add infinite scroll to your Genesis child themes. You have a couple of op
 
 10 different loading animations gives you plenty of options to choose from. You can literally set any color to the loading icons that suit your brand color.
 
-[View Demo on Geek Dashboard](https://www.geekdashboard.com/category/news/)
+[View Demo](https://www.geekdashboard.com/category/news/)
 
-Features of Infinite Scroll for Genesis:
+**Features of Infinite Scroll for Genesis:**
 
 * Lightweight implementation.
 * Flexible options to enable/disable infinite scroll on the home page, blog, tags, categories, author archives, and search results.
@@ -31,7 +31,13 @@ Features of Infinite Scroll for Genesis:
 * No additional load on your regular posts since infinite scroll on posts is meaningless.
 * SEO Friendly. Your regular Pagination (/page/1, /page/2, etc.) still work with proper canonical links.
 
+[Learn more about Infinite Scroll for Genesis Features](https://www.geekdashboard.com/add-infinite-scroll-to-genesis/)
+
 If you have any questions about our plugin, don't hesitate to contact us from our official website [Geek Dashboard](https://www.geekdashboard.com/)
+
+**Video Tutorial**
+
+[youtube https://www.youtube.com/watch?v=WIsUux0B2Z8]
 
 == Installation ==
 
@@ -76,6 +82,10 @@ Both options have their own pros and cons. If you have important information in 
 4. Color Picker for Button and Animations
 
 == Changelog ==
+
+= v1.1 (05 October 2020) =
+* NEW: Customize Load More button text and end of page message.
+* Bug Fix: JS error when pagination is not available on the page.
 
 = v1.0.2 (31 July 2020) =
 * Minor Bug Fixes.

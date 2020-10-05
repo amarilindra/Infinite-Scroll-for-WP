@@ -22,21 +22,25 @@ $current_tab = isset($_GET['tab']) ? esc_html($_GET['tab']) : "configure";
                class="nav-tab <?php echo $current_tab == 'recommendations' ? 'nav-tab-active' : ''; ?>"><span
                         class="dashicons dashicons-megaphone ikva-infinite-scroll-tab-icons"></span></span>Our
                 Recommendations</a>
-            <a href="https://ikvaesolutions.com/go/donate" target="_blank" class="nav-tab" style="float: right;"><span
-                        class="dashicons dashicons-heart ikva-infinite-scroll-tab-icons"
-                        style="margin-top: 2px;"></span>Buy me a Burger</a>
+            <a href="https://ikvaesolutions.com/go/donate" target="_blank" class="nav-tab" style="float: right;">
+                <svg class="heart" viewBox="0 0 32 29.6">
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                </svg>
+                Buy me a Burger</a>
         </h2>
 
         <?php ikva_infinite_scroll_showCurrentTab($current_tab); ?>
 
         <style>
+
             .ikva-infinite-scroll-tab-icons {
                 margin-right: 5px;
                 margin-top: 1px;
             }
 
             .ikva-infinite-scroll-tab:before {
-                font-family: Dashicons;
+                font-family: Dashicons, serif;
                 opacity: 0.2;
                 color: #aaa;
                 font-size: 200pt;
@@ -56,6 +60,21 @@ $current_tab = isset($_GET['tab']) ? esc_html($_GET['tab']) : "configure";
 
             .ikva-infinite-scroll-tab.recommendations:before {
                 content: "\f488";
+            }
+
+            .heart {
+                fill: #f44336;
+                position: relative;
+                top: 3px;
+                width: 15px;
+                margin-right: 5px;
+                animation: pulse 1s ease infinite;
+            }
+
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.3); }
+                100% { transform: scale(1); }
             }
 
         </style>
