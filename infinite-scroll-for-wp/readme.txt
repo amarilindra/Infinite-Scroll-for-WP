@@ -3,7 +3,7 @@ Contributors: amarilindra, ikvaesolutions
 Donate link: https://ikvaesolutions.com/go/donate
 Tags: Genesis, Infinite Scroll, UI, User Experience, Pagination
 Requires at least: 4.7
-Tested up to: 5.5.1
+Tested up to: 5.6.1
 Stable tag: 1.1
 Version: 1.1
 Requires PHP: 5.2.4
