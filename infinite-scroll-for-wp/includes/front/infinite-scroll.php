@@ -11,6 +11,8 @@ function ikva_infinite_scroll_for_wp_front_scripts()
     $ikva_infinite_scroll_for_wp_author = ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_author_archives", 0);
     $ikva_infinite_scroll_for_wp_search = ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_search_results", 0);
 
+
+
     if (
         ((is_front_page() || is_home()) && $ikva_infinite_scroll_for_wp_home) ||
         (ikva_infinite_scroll_is_blog() && $ikva_infinite_scroll_for_wp_blog) ||
@@ -19,8 +21,10 @@ function ikva_infinite_scroll_for_wp_front_scripts()
         (is_author() && $ikva_infinite_scroll_for_wp_author) ||
         (is_search() && $ikva_infinite_scroll_for_wp_search)
     ) {
-        ikva_infinite_scroll_for_wp_front();
+//        ikva_infinite_scroll_for_wp_front();
     }
+
+    ikva_infinite_scroll_for_wp_front();
 
 }
 

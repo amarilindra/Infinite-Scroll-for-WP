@@ -5,54 +5,53 @@ function ikva_infinite_scroll_for_wp_configure()
 
     global $ikva_infinite_scroll_for_wp_settings;
 
-    $viewable_configuration = array(
-
-        array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_home_page",
-            "title" => "Home Page",
-            "description" => "",
-            "linebreak" => true
-        ),
-
-        array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_blog",
-            "title" => "Blog",
-            "description" => "",
-            "linebreak" => true
-        ),
-
-        array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_category_archives",
-            "title" => "Category Archives",
-            "description" => "",
-            "linebreak" => true
-        ),
-
-        array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_tag_archives",
-            "title" => "Tag Archives",
-            "description" => "",
-            "linebreak" => true
-        ),
-
-        array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_author_archives",
-            "title" => "Author Archives",
-            "description" => "",
-            "linebreak" => true
-        ),
-
-        array(
-            "key" => "ikva_infinite_scroll_for_wp_configure_search_results",
-            "title" => "Search Results",
-            "description" => "",
-            "linebreak" => true
-        )
-
+    $viewable_configuration[] = array(
+        "key" => "ikva_infinite_scroll_for_wp_configure_home_page",
+        "title" => "Home Page",
+        "description" => "",
+        "linebreak" => true
     );
 
-    if (isset($_POST['submit'])) {
+    $viewable_configuration[] = array(
+        "key" => "ikva_infinite_scroll_for_wp_configure_blog",
+        "title" => "Blog",
+        "description" => "",
+        "linebreak" => true
+    );
 
+    $viewable_configuration[] = array(
+        "key" => "ikva_infinite_scroll_for_wp_configure_category_archives",
+        "title" => "Category Archives",
+        "description" => "",
+        "linebreak" => true
+    );
+
+    $viewable_configuration[] = array(
+        "key" => "ikva_infinite_scroll_for_wp_configure_tag_archives",
+        "title" => "Tag Archives",
+        "description" => "",
+        "linebreak" => true
+    );
+
+    $viewable_configuration[] = array(
+        "key" => "ikva_infinite_scroll_for_wp_configure_author_archives",
+        "title" => "Author Archives",
+        "description" => "",
+        "linebreak" => true
+    );
+
+    $viewable_configuration[] = array(
+        "key" => "ikva_infinite_scroll_for_wp_configure_search_results",
+        "title" => "Search Results",
+        "description" => "",
+        "linebreak" => true
+    );
+
+    getCustomPublicPostTypes($viewable_configuration);
+    getCustomPublicTaxonomies($viewable_configuration);
+
+
+    if (isset($_POST['submit'])) {
 
         $ikva_infinite_scroll_for_wp_settings = array();
 
@@ -86,6 +85,7 @@ function ikva_infinite_scroll_for_wp_configure()
                         <legend class="screen-reader-text"><span>Enable Infinite Scroll on</span></legend>
 
                         <?php
+
                         foreach ($viewable_configuration as $checkbox) {
                             ikva_infinite_scroll_for_wp_generate_checkbox(
                                 $checkbox["key"],
@@ -199,7 +199,7 @@ function ikva_infinite_scroll_for_wp_configure()
                         <input name="ikva_infinite_scroll_for_wp_configure_button_text" type="text" maxlength="50"
                                id="ikva_infinite_scroll_for_wp_configure_button_text"
                                value="<?php echo ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_button_text", "Load More") ?>"
-                               >
+                        >
                     </label>
                 </td>
             </tr>
@@ -238,5 +238,30 @@ function ikva_infinite_scroll_for_wp_configure()
     </form>
 
     <?php
+}
 
+function getCustomPublicPostTypes(&$viewable_configuration)
+{
+    $post_types = get_post_types(array('public' => true, '_builtin' => false), 'objects', 'and');
+    foreach ($post_types as $post_type) {
+        $viewable_configuration[] = array(
+            "key" => "ikva_infinite_scroll_for_wp_configure_" . $post_type->name,
+            "title" => $post_type->labels->singular_name . ' (' . $post_type->name . ')',
+            "description" => "",
+            "linebreak" => true
+        );
+    }
+}
+
+function getCustomPublicTaxonomies(&$viewable_configuration)
+{
+    $taxonomies = get_taxonomies(array('public' => true, '_builtin' => false), 'objects', 'and');
+    foreach ($taxonomies as $taxonomy) {
+        $viewable_configuration[] = array(
+            "key" => "ikva_infinite_scroll_for_wp_configure_" . $taxonomy->name,
+            "title" => $taxonomy->labels->singular_name . ' (' . $taxonomy->name . ')',
+            "description" => "",
+            "linebreak" => true
+        );
+    }
 }
