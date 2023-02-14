@@ -11,7 +11,31 @@ function ikva_infinite_scroll_for_wp_front_scripts()
     $ikva_infinite_scroll_for_wp_author = ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_author_archives", 0);
     $ikva_infinite_scroll_for_wp_search = ikva_infinite_scroll_for_wp_get_option("ikva_infinite_scroll_for_wp_configure_search_results", 0);
 
+    $ikva_infinite_scroll_for_custom_post_type_archive = false;
+    $ikva_infinite_scroll_for_custom_taxonomy_archive = false;
 
+    $custom_post_types_names = get_post_types(array('public' => true, '_builtin' => false), 'names', 'and');
+    $custom_taxonomy_names = get_taxonomies(array('public' => true, '_builtin' => false), 'names', 'and');
+
+    foreach ($custom_post_types_names as $post_type) {
+        if (is_post_type_archive($post_type)) {
+            $key = "ikva_infinite_scroll_for_wp_configure_" . $post_type;
+            if (ikva_infinite_scroll_for_wp_get_option($key, 0)) {
+                $ikva_infinite_scroll_for_custom_post_type_archive = true;
+                break;
+            }
+        }
+    }
+
+    foreach ($custom_taxonomy_names as $taxonomy) {
+        if (is_tax($taxonomy)) {
+            $key = "ikva_infinite_scroll_for_wp_configure_" . $taxonomy;
+            if (ikva_infinite_scroll_for_wp_get_option($key, 0)) {
+                $ikva_infinite_scroll_for_custom_taxonomy_archive = true;
+                break;
+            }
+        }
+    }
 
     if (
         ((is_front_page() || is_home()) && $ikva_infinite_scroll_for_wp_home) ||
@@ -19,12 +43,15 @@ function ikva_infinite_scroll_for_wp_front_scripts()
         (is_category() && $ikva_infinite_scroll_for_wp_category) ||
         (is_tag() && $ikva_infinite_scroll_for_wp_tag) ||
         (is_author() && $ikva_infinite_scroll_for_wp_author) ||
-        (is_search() && $ikva_infinite_scroll_for_wp_search)
+        (is_search() && $ikva_infinite_scroll_for_wp_search) ||
+        $ikva_infinite_scroll_for_custom_post_type_archive ||
+        $ikva_infinite_scroll_for_custom_taxonomy_archive
     ) {
-//        ikva_infinite_scroll_for_wp_front();
+        ikva_infinite_scroll_for_wp_front();
+        error_log(print_r("Running infinite scroll", true));
+    } else {
+        error_log(print_r("Not Running infinite scroll", true));
     }
-
-    ikva_infinite_scroll_for_wp_front();
 
 }
 

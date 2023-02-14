@@ -16,11 +16,9 @@ if (!defined('WPINC')) {
 
 
 global $ikva_infinite_scroll_for_wp_settings;
-
-define('ikva_infinite_scroll_for_wp_settings', 'ikva_infinite_scroll_for_wp_settings');
-
-define('ikva_infinite_scroll_for_wp_PLUGIN_NAME', 'Infinite Scroll for Genesis');
-define('ikva_infinite_scroll_for_wp_SETTINGS_SLUG', 'infinite-scroll-for-wp');
+const ikva_infinite_scroll_for_wp_settings = 'ikva_infinite_scroll_for_wp_settings';
+const ikva_infinite_scroll_for_wp_PLUGIN_NAME = 'Infinite Scroll for Genesis';
+const ikva_infinite_scroll_for_wp_SETTINGS_SLUG = 'infinite-scroll-for-wp';
 define('ikva_infinite_scroll_for_wp_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('ikva_infinite_scroll_for_wp_ASSETS', plugin_dir_url(__FILE__) . 'assets');
 
