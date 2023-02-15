@@ -71,6 +71,9 @@ If you are using a custom-developed page instead of regular posts layout as your
 
 For example, check the home page of the [Geek Dashboard](https://www.geekdashboard.com/). Here we are using a custom-coded front page and infinite scroll is not possible since it is a combination of different sections. However, if you are using the theme's default latest posts as home page, you can enable infinite scroll on it.
 
+== Will it work on Custom Post Types and Taxonomies? ==
+It may work depending on your theme structure. If your theme is using the default archive pages from Genesis framework, it will work flawlessly. However, if you are using custom coded archive pages, the plugin may not work as expected.
+
 == Loading posts "Automatically on scroll" or "On Button Click". Which one to use and why? ==
 Both options have their own pros and cons. If you have important information in site footer or sidebar(on mobiles), you should use "On Button Click" to load more posts. So the user will have a chance to view your sidebar and footer. If you wish to save a user click and no critical information is available in the sidebar or the footer, you can choose to load posts automatically when the user scrolls to the end of the list.
 
