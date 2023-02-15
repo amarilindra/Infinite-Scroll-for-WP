@@ -3,9 +3,9 @@ Contributors: amarilindra, ikvaesolutions
 Donate link: https://ikvaesolutions.com/go/donate
 Tags: Genesis, Infinite Scroll, UI, User Experience, Pagination
 Requires at least: 4.7
-Tested up to: 5.6.1
+Tested up to: 6.1.1
 Stable tag: 1.1
-Version: 1.1
+Version: 2.0
 Requires PHP: 5.2.4
 License: GPLv2 or later
 
@@ -82,6 +82,9 @@ Both options have their own pros and cons. If you have important information in 
 4. Color Picker for Button and Animations
 
 == Changelog ==
+
+= v2.0 (15 February 2023) =
+* NEW: Support for Custom Post Types and Taxonomies Added.
 
 = v1.1 (05 October 2020) =
 * NEW: Customize Load More button text and end of page message.

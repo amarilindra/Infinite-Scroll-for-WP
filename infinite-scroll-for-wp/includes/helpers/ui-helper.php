@@ -15,6 +15,14 @@ function ikva_infinite_scroll_for_wp_generate_checkbox(string $id, string $title
 }
 
 
+function ikva_infinite_scroll_for_wp_generate_heading(string $title, string $description, bool $linebreak = true)
+{
+    if ($linebreak) echo "<br>";
+    echo $title;
+    echo $description;
+}
+
+
 function ikva_infinite_scroll_for_wp_getCheckboxStatus(string $key)
 {
     global $ikva_infinite_scroll_for_wp_settings;
