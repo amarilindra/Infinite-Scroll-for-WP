@@ -9,47 +9,59 @@ function ikva_infinite_scroll_for_wp_configure()
         "key" => "ikva_infinite_scroll_for_wp_configure_home_page",
         "title" => "Home Page",
         "description" => "",
-        "linebreak" => true
+        "linebreak" => true,
+        "type" => "checkbox"
     );
 
     $viewable_configuration[] = array(
         "key" => "ikva_infinite_scroll_for_wp_configure_blog",
         "title" => "Blog",
         "description" => "",
-        "linebreak" => true
+        "linebreak" => true,
+        "type" => "checkbox"
     );
 
     $viewable_configuration[] = array(
         "key" => "ikva_infinite_scroll_for_wp_configure_category_archives",
         "title" => "Category Archives",
         "description" => "",
-        "linebreak" => true
+        "linebreak" => true,
+        "type" => "checkbox"
     );
 
     $viewable_configuration[] = array(
         "key" => "ikva_infinite_scroll_for_wp_configure_tag_archives",
         "title" => "Tag Archives",
         "description" => "",
-        "linebreak" => true
+        "linebreak" => true,
+        "type" => "checkbox"
     );
 
     $viewable_configuration[] = array(
         "key" => "ikva_infinite_scroll_for_wp_configure_author_archives",
         "title" => "Author Archives",
         "description" => "",
-        "linebreak" => true
+        "linebreak" => true,
+        "type" => "checkbox"
     );
 
     $viewable_configuration[] = array(
         "key" => "ikva_infinite_scroll_for_wp_configure_search_results",
         "title" => "Search Results",
         "description" => "",
-        "linebreak" => true
+        "linebreak" => true,
+        "type" => "checkbox"
     );
 
-    $cpt_viewable_configuration = __return_empty_array();
-    getCustomPublicPostTypes($cpt_viewable_configuration);
-    getCustomPublicTaxonomies($cpt_viewable_configuration);
+    $viewable_configuration[] = array(
+        "title" => "<strong>Custom Post Types and Taxonimies</strong>",
+        "description" => "<p style='margin-bottom: 1rem'><i>CPT and Taxonomies are experimental and it works only if your theme is following the Genesis Framework coding standards in Archives</i></p>",
+        "linebreak" => true,
+        "type" => "heading"
+    );
+
+    getCustomPublicPostTypes($viewable_configuration);
+    getCustomPublicTaxonomies($viewable_configuration);
 
 
     if (isset($_POST['submit'])) {
@@ -57,12 +69,9 @@ function ikva_infinite_scroll_for_wp_configure()
         $ikva_infinite_scroll_for_wp_settings = array();
 
         foreach ($viewable_configuration as $checkbox) {
-            $ikva_infinite_scroll_for_wp_settings[$checkbox["key"]] = sanitize_text_field(isset($_POST[$checkbox["key"]]));
-        }
-
-        // CPT and Taxnonomies
-        foreach ($cpt_viewable_configuration as $checkbox) {
-            $ikva_infinite_scroll_for_wp_settings[$checkbox["key"]] = sanitize_text_field(isset($_POST[$checkbox["key"]]));
+            if ($checkbox["type"] == "checkbox") {
+                $ikva_infinite_scroll_for_wp_settings[$checkbox["key"]] = sanitize_text_field(isset($_POST[$checkbox["key"]]));
+            }
         }
 
         $ikva_infinite_scroll_for_wp_settings["ikva_infinite_scroll_for_wp_configure_loading_type"] = sanitize_text_field($_POST["ikva_infinite_scroll_for_wp_configure_loading_type"]);
@@ -91,28 +100,23 @@ function ikva_infinite_scroll_for_wp_configure()
                         <legend class="screen-reader-text"><span>Enable Infinite Scroll on</span></legend>
                         <?php
                         foreach ($viewable_configuration as $checkbox) {
-                            ikva_infinite_scroll_for_wp_generate_checkbox(
-                                $checkbox["key"],
-                                $checkbox["title"],
-                                $checkbox["description"],
-                                $checkbox["linebreak"]
-                            );
-                        }
-                        ?>
-                    </fieldset>
-                    <fieldset style="margin-top: 1rem">
-                        <legend><strong>Custom Post Types and Taxonimies</strong></legend>
-                        <p style="margin-bottom: 1rem"><i>CPT and Taxonomies are experimental and it works only if your
-                                theme is following the
-                                Genesis Framework coding standards in Archives</i></p>
-                        <?php
-                        foreach ($cpt_viewable_configuration as $checkbox) {
-                            ikva_infinite_scroll_for_wp_generate_checkbox(
-                                $checkbox["key"],
-                                $checkbox["title"],
-                                $checkbox["description"],
-                                $checkbox["linebreak"]
-                            );
+                            switch ($checkbox["type"]) {
+                                case "heading":
+                                    ikva_infinite_scroll_for_wp_generate_heading(
+                                        $checkbox["title"],
+                                        $checkbox["description"],
+                                        $checkbox["linebreak"]
+                                    );
+                                    break;
+                                case "checkbox":
+                                    ikva_infinite_scroll_for_wp_generate_checkbox(
+                                        $checkbox["key"],
+                                        $checkbox["title"],
+                                        $checkbox["description"],
+                                        $checkbox["linebreak"]
+                                    );
+                                    break;
+                            }
                         }
                         ?>
                     </fieldset>
@@ -259,28 +263,30 @@ function ikva_infinite_scroll_for_wp_configure()
     <?php
 }
 
-function getCustomPublicPostTypes(&$cpt_viewable_configuration)
+function getCustomPublicPostTypes(&$viewable_configuration)
 {
     $post_types = get_post_types(array('public' => true, '_builtin' => false), 'objects', 'and');
     foreach ($post_types as $post_type) {
-        $cpt_viewable_configuration[] = array(
+        $viewable_configuration[] = array(
             "key" => "ikva_infinite_scroll_for_wp_configure_" . $post_type->name,
             "title" => $post_type->labels->singular_name . ' <small>(' . $post_type->name . ')</small>',
             "description" => "",
-            "linebreak" => true
+            "linebreak" => true,
+            "type" => "checkbox"
         );
     }
 }
 
-function getCustomPublicTaxonomies(&$cpt_viewable_configuration)
+function getCustomPublicTaxonomies(&$viewable_configuration)
 {
     $taxonomies = get_taxonomies(array('public' => true, '_builtin' => false), 'objects', 'and');
     foreach ($taxonomies as $taxonomy) {
-        $cpt_viewable_configuration[] = array(
+        $viewable_configuration[] = array(
             "key" => "ikva_infinite_scroll_for_wp_configure_" . $taxonomy->name,
             "title" => $taxonomy->labels->singular_name . ' <small>(' . $taxonomy->name . ')</small>',
             "description" => "",
-            "linebreak" => true
+            "linebreak" => true,
+            "type" => "checkbox"
         );
     }
 }

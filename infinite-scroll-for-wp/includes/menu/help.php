@@ -24,6 +24,13 @@ function ikva_infinite_scroll_for_wp_help()
     </div>
 
     <div class="ikva_infinite_scroll_for_wp_help">
+        <h3>Will it work on Custom Post Types and Taxonomies?</h3>
+        <p>It may work depending on your theme structure. If your theme is using the default archive pages from Genesis
+            framework, it will work flawlessly. However, if you are using custom coded archive pages, the plugin may not
+            work as expected.</p>
+    </div>
+
+    <div class="ikva_infinite_scroll_for_wp_help">
         <h3>Loading posts "Automatically on scroll" or "On Button Click". Which one to use and why?</h3>
         <p>Both options have it's own pros and cons. If you have important information in site footer or sidebar(on
             mobiles), you should use "On Button Click" to load more posts. So the user will have a chance to view your
@@ -72,8 +79,9 @@ function ikva_infinite_scroll_for_wp_help()
     </div>
     <div class="ikva_infinite_scroll_for_wp_help">
         <h3>How does this plugin work?</h3>
-        <p>This plugin is using <a href="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/js/infinite-scroll.pkgd.min.js'?>"
-                                   target="_blank">infinite-scroll.pkgd.min.js</a> to load more posts
+        <p>This plugin is using <a
+                    href="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/js/infinite-scroll.pkgd.min.js' ?>"
+                    target="_blank">infinite-scroll.pkgd.min.js</a> to load more posts
             and special thanks to Tobiasahlin's <a href="https://tobiasahlin.com/spinkit/" target="_blank">Spinkit</a>
             for loading animations with pure CSS</p>
     </div>

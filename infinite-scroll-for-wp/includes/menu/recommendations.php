@@ -77,32 +77,6 @@ function ikva_infinite_scroll_for_wp_recommendations()
             </div>
         </div>
 
-
-        <div class="ikva-grid-box-container">
-            <div class="ikva-image-container notification-history-log">
-                <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/notification-history-log.png'?>"
-                     style="width: 75px">
-            </div>
-            <div class="ikva-grid-box-wrap">
-                <h2>Notification History Log</h2>
-                <p>View the past Android notifications you have dismissed already.<br><br>The only Android application
-                    you need to organize and keep track of all your notifications.</p>
-                <ul style="list-style:inside">
-                    <li>Dark more</li>
-                    <li>Advanced History</li>
-                    <li>Powerful search</li>
-                    <li>Blacklist Apps</li>
-                    <li>Favourites</li>
-                    <li>and more...</li>
-                </ul>
-                <a style="margin-top: 10px"
-                   href="https://play.google.com/store/apps/details?id=com.ikvaesolutions.notificationhistorylog"
-                   target="_blank"
-                   class="button-primary">Download from Play Store</a>
-            </div>
-        </div>
-
-
         <div class="ikva-grid-box-container">
             <div class="ikva-image-container geekdashboard">
                 <img src="<?php echo ikva_infinite_scroll_for_wp_ASSETS . '/images/geekdashboard.png'?>" width="150">
