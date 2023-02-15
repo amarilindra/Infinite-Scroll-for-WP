@@ -47,8 +47,9 @@ function ikva_infinite_scroll_for_wp_configure()
         "linebreak" => true
     );
 
-    getCustomPublicPostTypes($viewable_configuration);
-    getCustomPublicTaxonomies($viewable_configuration);
+    $cpt_viewable_configuration = __return_empty_array();
+    getCustomPublicPostTypes($cpt_viewable_configuration);
+    getCustomPublicTaxonomies($cpt_viewable_configuration);
 
 
     if (isset($_POST['submit'])) {
@@ -56,6 +57,11 @@ function ikva_infinite_scroll_for_wp_configure()
         $ikva_infinite_scroll_for_wp_settings = array();
 
         foreach ($viewable_configuration as $checkbox) {
+            $ikva_infinite_scroll_for_wp_settings[$checkbox["key"]] = sanitize_text_field(isset($_POST[$checkbox["key"]]));
+        }
+
+        // CPT and Taxnonomies
+        foreach ($cpt_viewable_configuration as $checkbox) {
             $ikva_infinite_scroll_for_wp_settings[$checkbox["key"]] = sanitize_text_field(isset($_POST[$checkbox["key"]]));
         }
 
@@ -83,9 +89,7 @@ function ikva_infinite_scroll_for_wp_configure()
                 <td>
                     <fieldset>
                         <legend class="screen-reader-text"><span>Enable Infinite Scroll on</span></legend>
-
                         <?php
-
                         foreach ($viewable_configuration as $checkbox) {
                             ikva_infinite_scroll_for_wp_generate_checkbox(
                                 $checkbox["key"],
@@ -95,7 +99,22 @@ function ikva_infinite_scroll_for_wp_configure()
                             );
                         }
                         ?>
-
+                    </fieldset>
+                    <fieldset style="margin-top: 1rem">
+                        <legend><strong>Custom Post Types and Taxonimies</strong></legend>
+                        <p style="margin-bottom: 1rem"><i>CPT and Taxonomies are experimental and it works only if your
+                                theme is following the
+                                Genesis Framework coding standards in Archives</i></p>
+                        <?php
+                        foreach ($cpt_viewable_configuration as $checkbox) {
+                            ikva_infinite_scroll_for_wp_generate_checkbox(
+                                $checkbox["key"],
+                                $checkbox["title"],
+                                $checkbox["description"],
+                                $checkbox["linebreak"]
+                            );
+                        }
+                        ?>
                     </fieldset>
                 </td>
             </tr>
@@ -240,26 +259,26 @@ function ikva_infinite_scroll_for_wp_configure()
     <?php
 }
 
-function getCustomPublicPostTypes(&$viewable_configuration)
+function getCustomPublicPostTypes(&$cpt_viewable_configuration)
 {
     $post_types = get_post_types(array('public' => true, '_builtin' => false), 'objects', 'and');
     foreach ($post_types as $post_type) {
-        $viewable_configuration[] = array(
+        $cpt_viewable_configuration[] = array(
             "key" => "ikva_infinite_scroll_for_wp_configure_" . $post_type->name,
-            "title" => $post_type->labels->singular_name . ' (' . $post_type->name . ')',
+            "title" => $post_type->labels->singular_name . ' <small>(' . $post_type->name . ')</small>',
             "description" => "",
             "linebreak" => true
         );
     }
 }
 
-function getCustomPublicTaxonomies(&$viewable_configuration)
+function getCustomPublicTaxonomies(&$cpt_viewable_configuration)
 {
     $taxonomies = get_taxonomies(array('public' => true, '_builtin' => false), 'objects', 'and');
     foreach ($taxonomies as $taxonomy) {
-        $viewable_configuration[] = array(
+        $cpt_viewable_configuration[] = array(
             "key" => "ikva_infinite_scroll_for_wp_configure_" . $taxonomy->name,
-            "title" => $taxonomy->labels->singular_name . ' (' . $taxonomy->name . ')',
+            "title" => $taxonomy->labels->singular_name . ' <small>(' . $taxonomy->name . ')</small>',
             "description" => "",
             "linebreak" => true
         );
